@@ -1,0 +1,18 @@
+{
+  "name": "@flowpatch/engine",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@flowpatch/ai": "*",
+    "@flowpatch/db": "*",
+    "@flowpatch/types": "*",
+    "@flowpatch/utils": "*",
+    "@langchain/langgraph": "^0.0.15",
+    "@langchain/core": "^0.1.28",
+    "@mendable/firecrawl-js": "^1.1.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

@@ -1,0 +1,48 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String?
+  newsletters Newsletter[]
+  runs        AgentRun[]
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  url       String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  snippets  StyleSnippet[]
+  createdAt DateTime @default(now())
+}
+
+model StyleSnippet {
+  id           String   @id @default(cuid())
+  content      String
+  type         String   // HOOK, CTA, etc.
+  embeddingId  String?  // Reference to Pinecone ID
+  newsletterId String
+  newsletter   Newsletter @relation(fields: [newsletterId], references: [id])
+  metadata     Json?
+}
+
+model AgentRun {
+  id        String   @id @default(cuid())
+  topic     String
+  status    String   // RUNNING, COMPLETED, FAILED
+  logs      String[]
+  output    String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}

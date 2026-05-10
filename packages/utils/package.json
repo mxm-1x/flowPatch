@@ -1,0 +1,15 @@
+{
+  "name": "@flowpatch/utils",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "@mendable/firecrawl-js": "^1.1.0",
+    "@flowpatch/types": "*"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

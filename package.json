@@ -1,0 +1,29 @@
+{
+  "name": "flowpatch",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "ingest": "tsx scripts/ingest-newsletter.ts",
+    "generate": "tsx scripts/generate-newsletter.ts"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.45",
+    "@langchain/langgraph": "^1.3.0",
+    "@langchain/openai": "^1.4.5",
+    "next": "^14.2.33",
+    "zod": "^4.4.3"
+  }
+}

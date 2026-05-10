@@ -1,0 +1,19 @@
+{
+  "name": "@flowpatch/db",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "@pinecone-database/pinecone": "^2.0.1",
+    "@flowpatch/types": "*"
+  },
+  "devDependencies": {
+    "prisma": "^5.10.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push"
+  }
+}
