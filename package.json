@@ -10,7 +10,8 @@
     "build": "npm run build --workspaces",
     "test": "npm test --workspaces",
     "ingest": "tsx scripts/ingest-newsletter.ts",
-    "generate": "tsx scripts/generate-newsletter.ts"
+    "generate": "tsx scripts/generate-newsletter.ts",
+    "postinstall": "npx prisma generate"
   },
   "devDependencies": {
     "dotenv": "^16.4.5",
