@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@flowpatch/ai": "*",
+    "@flowpatch/db": "*",
     "@flowpatch/engine": "*",
     "@flowpatch/types": "*",
     "bcryptjs": "^3.0.3",
